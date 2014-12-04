@@ -27,7 +27,7 @@ mysql_select_db("unification");
 
 //insert values
 $insert_query = "INSERT INTO missing (firstname, lastname, age, gender, height, distinguishingfeatures, mothername, fathername, lastseenplace, lastseentime, contact, photo, lost)' 
-um.'VALUES ('$firstname', '$lastname', '$age', '$gender', '$height', '$distinguishingfeatures', '$mothername', '$fathername', '$lastseenplace', 'lastseentime', $contact', '$photo', '$lost')";
+.'VALUES ('$firstname', '$lastname', '$age', '$gender', '$height', '$distinguishingfeatures', '$mothername', '$fathername', '$lastseenplace', '$lastseentime', $contact', '$photo', '$lost')";
 mysql_query($insert_query);
 
 //close MySQL
