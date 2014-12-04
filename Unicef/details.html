@@ -31,12 +31,13 @@ body {
   <div id="hero">
     <p>Missing children/ Preregistration form</p>
     <form id="form1" action = "insertmissingrecord.php" name="missingform" method="post">
-      <p>Missing child
-        <input type="checkbox" name="lost" id="checkbox">
+      <p>
+        <label for="textfield">lost: </label>
+        <input type="text" name="lost" id="textfield">
       </p>
-      <p>Register child
-        <input type="checkbox" name="checkbox2" id="checkbox2">
-      </p>
+      
+        
+      
       <p>
         <label for="textfield">First Name: </label>
         <input type="text" name="firstname" id="textfield">
@@ -60,12 +61,10 @@ body {
         <input type="text" name="height" id="number2">
       </p>
       <p>
-        <label for="select">Gender:</label>
-        <select name="select" id="gender" form="genderform">
-          <option>M</option>
-          <option>F</option>
-        </select>
+        <label for="textfield">gender: </label>
+        <input type="text" name="gender" id="textfield">
       </p>
+        
       <p>
         <label for="textfield6">Date last seen:</label>
         <input type="text" name="lastseentime" id="datetime">
@@ -74,8 +73,8 @@ body {
         <input type="text" name="lastseenplace" id="textfield5">
       </p>
       <p>
-        <label for="textfield8">Other distinguishing features</label>
-        <textarea name="distinguishingfeatures" id="textarea"></textarea>
+        <label for="textfield">features: </label>
+        <input type="text" name="distinguishingfeatures" id="textfield">
       </p>
       <p>
         <input type="submit" name="submit" id="submit" value="Submit">
