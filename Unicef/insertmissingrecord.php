@@ -12,7 +12,7 @@ $fathername = $_POST[fathername];
 $contact = $_POST[contact];
 $lastseenplace = $_POST[lastseenplace];
 $lastseentime = $_POST[lastseentime];
-$photo = $_POST[photo];
+$photo = $_POST[photo]; 
 $lost = $_POST[lost];
 
 //connect to MySQL
@@ -26,8 +26,8 @@ mysql_connect($servername,$username,$password);
 mysql_select_db("unification");
 
 //insert values
-$insert_query = "INSERT INTO missing (firstname, lastname, age, gender, height, distinguishingfeatures, mothername, fathername, lastseenplace, lastseentime, contact, photo, lost)' 
-.'VALUES ('$firstname', '$lastname', '$age', '$gender', '$height', '$distinguishingfeatures', '$mothername', '$fathername', '$lastseenplace', '$lastseentime', $contact', '$photo', '$lost')";
+$insert_query = "INSERT INTO missing (firstname, lastname, age, gender, height, distinguishingfeatures, mothername, fathername, lastseenplace, lastseentime, contact, lost)' 
+.'VALUES ('$firstname', '$lastname', '$age', '$gender', '$height', '$distinguishingfeatures', '$mothername', '$fathername', '$lastseenplace', '$lastseentime', $contact',  '$lost')";
 mysql_query($insert_query);
 
 //close MySQL
