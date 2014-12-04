@@ -3,19 +3,23 @@
 <body>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "usbw";
-$dbname = "Main";
+$servername = "127.0.0.1:3306";
+$username = "ateam";
+$password = "shubham";
+$dbname = "unification";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysql_connect($server, $user_name, $password);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT id, firstname, lastname FROM Children";
+$sql = "CREATE\n"
+    . " ALGORITHM = UNDEFINED\n"
+    . " VIEW `jat`\n"
+    . " (id, firstname, lastname)\n"
+    . " AS SELECT id, firstname, lastname FROM `missing`";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
