@@ -31,13 +31,9 @@ body {
   </header>
   <div id="hero">
     <p>Missing children/ Preregistration form</p>
-<<<<<<< Updated upstream
-    <form id="form1" action = "insertmissingrecord.php" name="missingform" method="post">
-=======
     <form id="form1" name="form1" method="post">
->>>>>>> Stashed changes
       <p>Missing child
-        <input type="checkbox" name="lost" id="checkbox">
+        <input type="checkbox" name="checkbox" id="checkbox">
       </p>
       <p>Register child
         <input type="checkbox" name="checkbox2" id="checkbox2">
@@ -66,21 +62,21 @@ body {
       </p>
       <p>
         <label for="select">Gender:</label>
-        <select name="select" id="gender" form="genderform">
+        <select name="select" id="select" form="form1">
           <option>M</option>
           <option>F</option>
         </select>
       </p>
       <p>
         <label for="textfield6">Date last seen:</label>
-        <input type="datetime" name="lastseentime" id="datetime">
+        <input type="datetime" name="datetime" id="datetime">
       </p>
       <p>Location last seen:
-        <input type="text" name="lastseenplace" id="textfield5">
+        <input type="text" name="textfield5" id="textfield5">
       </p>
       <p>
         <label for="textfield8">Other distinguishing features</label>
-        <textarea name="distinguishingfeatures" id="textarea"></textarea>
+        <textarea name="textarea" id="textarea"></textarea>
       </p>
       <p>
         <input type="submit" name="submit" id="submit" value="Submit">
