@@ -43,5 +43,7 @@ if ($conn->query($sql) === TRUE) {
     echo $response;
     echo "message sent!";
 
+    header("Location: messagesent.html")
+
     $conn->close();
 ?>
