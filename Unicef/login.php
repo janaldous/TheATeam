@@ -14,6 +14,12 @@ mysql_select_db("$db_name")or die("cannot select DB");
 $myusername=$_POST['username']; 
 $mypassword=$_POST['password']; 
 
+	echo $myusername;
+	echo $mypassword;
+
+	break;
+
+
 // To protect MySQL injection (more detail about MySQL injection)
 $myusername = stripslashes($myusername);
 $mypassword = stripslashes($mypassword);
