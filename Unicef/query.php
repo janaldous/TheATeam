@@ -54,7 +54,8 @@
                   echo "<td>".$result['lastname']."</td>";
                   echo "<td>".$result['age']."</td>";
                   echo "<td>".$result['lost']."</td>";
-                  echo "<td><input type=\"radio\" name=\"sex\" value=\"male\"></td>";
+                  $val = $result['id'];
+                  echo "<td><input type=\"radio\" name=\"thisone\" value=$val></td>";
                   echo "</tr>";
             }
             echo "</table>";
