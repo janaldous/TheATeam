@@ -5,9 +5,9 @@
       if(isset($_POST['search']))
       {
             $find =$_POST['firstname'];
-            $lastname =$_POST['lastname'];
+            //$lastname =$_POST['lastname'];
             //If they did not enter a search term we give them an error
-            if ($find == "" && $lastname = "")
+            if ($find == "" ) //|| $lastname = "")
             {
                   echo "<p>You forgot to enter a search term!!!";
                   exit;
@@ -22,14 +22,14 @@
             $find = trim ($find);
 
             //Now we search for our search term, in the field the user specified
-            $iname = mysql_query("SELECT * FROM missing WHERE firstname LIKE '%$find%' or lastname LIKE '%$lastname%'")
+            $iname = mysql_query("SELECT * FROM missing WHERE firstname LIKE '%$find%'")
              or die(mysql_error());
 
             //And we display the results
             while($result = mysql_fetch_array( $iname ))
             {
                   echo "id :" .$result['id'];
-                  echo "<br> ";
+                 /** echo "<br> ";
                   echo "firstname :".$result['firstname'];
                   echo "<br>";
                   echo "lastname :".$result['lastname'];
@@ -37,14 +37,14 @@
                   echo "age :".$result['age'];
                   echo "<br>";
                   echo "lost :".$result['lost'];
-                  echo "<br>";
+                  echo "<br>";**/
             }
 
             //This counts the number or results - and if there wasn't any it gives them a     little     message explaining that
             $anymatches = mysql_num_rows($iname);
             if ($anymatches == 0)
             {
-                  fecho "Sorry, but we can not find an entry to match your query...<br><br>";
+                  echo "Sorry, but we can not find an entry to match your query...<br><br>";
             }
 
             //And we remind them what they searched for
