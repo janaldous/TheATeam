@@ -14,10 +14,10 @@ mysql_select_db("$db_name")or die("cannot select DB");
 $myusername=$_POST['username']; 
 $mypassword=$_POST['password']; 
 
-	echo $myusername;
-	echo $mypassword;
+	print $myusername;
+	print $mypassword;
 
-	break;
+
 
 
 // To protect MySQL injection (more detail about MySQL injection)
@@ -40,6 +40,6 @@ session_register("mypassword");
 header("location:LandPage.php");
 }
 else {
-echo "Wrong Username or Password";
+print "Wrong Username or Password";
 }
 ?>
