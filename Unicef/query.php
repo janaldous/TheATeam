@@ -44,6 +44,7 @@
                   echo "<th>lastname </th>";
                   echo "<th>age</th>";
                   echo "<th>lost</th>";
+                  echo "<th>check if found</th>";
                   echo "</tr>";
             //And we display the results
             while($result = mysql_fetch_array( $sql ))
@@ -53,7 +54,7 @@
                   echo "<td>".$result['lastname']."</td>";
                   echo "<td>".$result['age']."</td>";
                   echo "<td>".$result['lost']."</td>";
-                  echo "<td><input type=\"checkbox\" name=\"found\" value=\"0\"></td>";
+                  echo "<td><input type=\"radio\" name=\"sex\" value=\"male\"></td>";
                   echo "</tr>";
             }
             echo "</table>";
@@ -71,3 +72,11 @@
             //}
       }
 ?> 
+
+<html>
+      <body>
+            <form id="form1" name="form1" method="post">
+                  <input type="submit" name="submit" id="submit" value="Submit">
+            </form>
+      </body>
+<html>
