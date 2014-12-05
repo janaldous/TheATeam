@@ -38,8 +38,10 @@ if ($conn->query($sql) === TRUE) {
     $smstext = mysql_fetch_array( $sql );
     $message = "Greetings! Your child, ".$smstext['firstname']." ".$smstext['lastname']." has been found! Last seen at ".$smstext['lastseenplace']." on ".$smstext['lastseentime'].". Please apporach a UNICEF volunteer to meet your child.";
     echo $message;
-    //$response = sendSMS('BWsGG7', 'JPhljH', $contact, 'wattup it actually works!!!', 'UNICEF');
-    //echo $response;
+    echo $smstext['contact'];
+    $response = sendSMS('BWsGG7', 'JPhljH', $smstext['contact'], $message, 'UNICEF');
+    echo $response;
+    echo "message sent!";
 
     $conn->close();
 ?>
