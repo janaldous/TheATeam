@@ -23,7 +23,6 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error updating record: " . $conn->error;
 }
-
 	function sendSMS($username, $password, $to, $message, $originator) {
         $URL = 'http://api.textmarketer.co.uk/gateway/'."?username=$username&password=$password&option=xml";
         $URL .= "&to=$to&message=".urlencode($message).'&orig='.urlencode($originator);
@@ -31,11 +30,13 @@ if ($conn->query($sql) === TRUE) {
         return fread($fp, 1024);
     }
 
+    mysql_connect("$host", "$username", "$password")or ("cannot connect"); 
+    mysql_select_db("$db_name")or die("cannot select DB");
+
     $sql = mysql_query("SELECT contact, firstname, lastname, lastseenplace, lastseentime FROM missing WHERE id=$find")
             or die(mysql_error());
     $smstext = mysql_fetch_array( $sql );
     $message = "Greetings! Your child, ".$smstext['firstname']." ".$smstext['lastname']." has been found! Last seen at ".$smstext['lastseenplace']." on ".$smstext['lastseentime'].". Please apporach a UNICEF volunteer to meet your child.";
-
     echo $message;
     //$response = sendSMS('BWsGG7', 'JPhljH', $contact, 'wattup it actually works!!!', 'UNICEF');
     //echo $response;

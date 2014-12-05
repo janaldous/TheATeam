@@ -52,7 +52,7 @@
                   echo "<td>".$result['lastname']."</td>";
                   echo "<td>".$result['age']."</td>";
                   echo "<td>".$result['lost']."</td>";
-                  if($result['lost']=="y") {
+                  if($result['lost']=="y" || $result['lost']=="1") {
                         $val = $result['id'];
                         echo "<td><input type=\"radio\" name=\"thisone\" value=$val></td>";
                   } else {
