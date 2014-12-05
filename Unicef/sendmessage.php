@@ -24,8 +24,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error updating record: " . $conn->error;
 }
 
-
-
 	function sendSMS($username, $password, $to, $message, $originator) {
         $URL = 'http://api.textmarketer.co.uk/gateway/'."?username=$username&password=$password&option=xml";
         $URL .= "&to=$to&message=".urlencode($message).'&orig='.urlencode($originator);
