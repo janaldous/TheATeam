@@ -31,7 +31,8 @@ function initialize() {
       '</div>'+
       '</div>';
 
-var address = ["London, UK", "New York, USA", "Manila", "Alsace", ""];
+var latit = <?php echo json_encode($lat); ?>;
+var longi = <?php echo json_encode($lon); ?>;
 
 codeAddress(map, address);
 
