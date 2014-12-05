@@ -13,8 +13,7 @@
       echo "<h2>Search Results:</h2><p>";
 
       if(isset($_POST['firstname']))
-      {
-            
+      {     
             $find =$_POST['firstname'];
             //$lastname =$_POST['lastname'];
             //If they did not enter a search term we give them an error
@@ -76,7 +75,7 @@
 
 <html>
       <body>
-            <form id="form1" name="form1" method="post">
+            <form id="form1" name="form1" method="post" action="sendmessage.php">
                   <input type="submit" name="submit" id="submit" value="Submit">
             </form>
       </body>
