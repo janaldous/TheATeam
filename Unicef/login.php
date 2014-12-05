@@ -32,7 +32,7 @@ if($count==1){
 // Register $myusername, $mypassword and redirect to file "login_success.php"
 session_register("username");
 session_register("password"); 
-header("location:login_success.html");
+header("location:LandPage.html");
 }
 else {
 echo "Wrong Username or Password";
