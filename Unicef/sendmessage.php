@@ -31,8 +31,6 @@ if ($conn->query($sql) === TRUE) {
         return fread($fp, 1024);
     }
 
-
-
     $smstext = mysql_fetch_array("SELECT contact, firstname, lastname, lastseenplace, lastseentime FROM missing WHERE id=$find");
     $message = "Greetings! Your child, ".$smstext['firstname']." ".$smstext['lastname']." has been found! Last seen at ".$smstext['lastseenplace']." on ".$smstext['lastseentime'].". Please apporach a UNICEF volunteer to meet your child.";
 
