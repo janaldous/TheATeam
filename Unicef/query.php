@@ -15,9 +15,8 @@
       if(isset($_POST['firstname']))
       {     
             $find =$_POST['firstname'];
-            //$lastname =$_POST['lastname'];
             //If they did not enter a search term we give them an error
-            if ($find == "" ) //|| $lastname = "")
+            if ($find == "") //|| $lastname = "")
             {
                   echo "<p>You forgot to enter a search term!!!";
                   exit;
@@ -32,12 +31,12 @@
             $find = trim ($find);
 
             //Now we search for our search term, in the field the user specified
-            $sql = mysql_query("SELECT * FROM missing WHERE firstname LIKE '%$find%'")
+            $sql = mysql_query("SELECT * FROM missing WHERE firstname LIKE '%$find%' OR lastname LIKE '%$find%'")
             or die(mysql_error());
             //echo $sql;
 
 
-            echo "<table style=\"width:100%\" border=\"1\">";
+            echo "<table width=\"100%\" border=\"1\">";
             echo "<tr><th>id</th>";
                   echo "<th>firstname</th>";
                   echo "<th>lastname </th>";
@@ -53,8 +52,12 @@
                   echo "<td>".$result['lastname']."</td>";
                   echo "<td>".$result['age']."</td>";
                   echo "<td>".$result['lost']."</td>";
-                  $val = $result['id'];
-                  echo "<td><input type=\"radio\" name=\"thisone\" value=$val></td>";
+                  if($result['lost']=="y") {
+                        $val = $result['id'];
+                        echo "<td><input type=\"radio\" name=\"thisone\" value=$val></td>";
+                  } else {
+                        echo "<td></td>";
+                  }
                   echo "</tr>";
             }
             echo "</table>";
@@ -76,6 +79,7 @@
 <html>
       <body>
             <form id="form1" name="form1" method="post" action="sendmessage.php">
+                  <input name="id" value="<?php echo $val?>">
                   <input type="submit" name="submit" id="submit" value="Submit">
             </form>
       </body>
